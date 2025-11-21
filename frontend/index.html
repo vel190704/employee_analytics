@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Analytics Platform</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>Departments</h2>
+                <button onclick="loadDepartmentsSidebar()" class="refresh-btn" title="Refresh departments">↻</button>
+            </div>
+            <div id="departmentsSidebar" class="departments-list">
+                <p class="loading-text">Loading departments...</p>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="container">
+                <header>
+                    <h1>Employee Analytics Platform</h1>
+                </header>
+                
+                <div class="tabs">
+                    <button class="tab-btn active" onclick="showTab('employees')">Employees</button>
+                    <button class="tab-btn" onclick="showTab('analytics')">Analytics</button>
+                    <button class="tab-btn" onclick="showTab('departments')">Departments</button>
+                </div>
+
+        <!-- Employees Tab -->
+        <div id="employees" class="tab-content active">
+            <h2>Employee Management</h2>
+            <div class="form-section">
+                <h3>Add New Employee</h3>
+                <form id="employeeForm">
+                    <input type="text" id="firstName" placeholder="First Name" required>
+                    <input type="text" id="lastName" placeholder="Last Name" required>
+                    <input type="email" id="email" placeholder="Email" required>
+                    <input type="number" id="salary" placeholder="Salary" required>
+                    <div class="selected-dept-display">
+                        <label>Selected Department:</label>
+                        <div id="selectedDepartment" class="selected-dept">No department selected - Click a department from the sidebar</div>
+                        <input type="hidden" id="departmentId" required>
+                    </div>
+                    <input type="date" id="dateJoined" required>
+                    <select id="status">
+                        <option value="active">Active</option>
+                        <option value="resigned">Resigned</option>
+                    </select>
+                    <button type="submit">Add Employee</button>
+                </form>
+            </div>
+            <div class="list-section">
+                <h3>All Employees</h3>
+                <button onclick="loadEmployees()">Refresh</button>
+                <div id="employeesList"></div>
+            </div>
+        </div>
+
+        <!-- Analytics Tab -->
+        <div id="analytics" class="tab-content">
+            <h2>Analytics Dashboard</h2>
+            <div class="analytics-grid">
+                <div class="card">
+                    <h3>Top Departments</h3>
+                    <button onclick="loadTopDepartments()">Load</button>
+                    <div id="topDepartments"></div>
+                </div>
+                <div class="card">
+                    <h3>Salary Insights</h3>
+                    <button onclick="loadSalaryInsights()">Load</button>
+                    <div id="salaryInsights"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Departments Tab -->
+        <div id="departments" class="tab-content">
+            <h2>Departments</h2>
+            <div class="form-section">
+                <h3>Add New Department</h3>
+                <form id="departmentForm">
+                    <input type="text" id="deptName" placeholder="Department Name" required>
+                    <input type="text" id="location" placeholder="Location" required>
+                    <button type="submit">Add Department</button>
+                </form>
+            </div>
+            <div class="list-section">
+                <h3>All Departments</h3>
+                <button onclick="loadDepartments()">Refresh</button>
+                <div id="departmentsList"></div>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
+

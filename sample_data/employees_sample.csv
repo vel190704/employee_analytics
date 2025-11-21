@@ -1,0 +1,12 @@
+first_name,last_name,email,salary,department_id,date_joined,status
+John,Doe,john.doe@example.com,75000,1,2023-01-15,active
+Jane,Smith,jane.smith@example.com,80000,1,2023-02-20,active
+Bob,Johnson,bob.johnson@example.com,65000,2,2023-03-10,active
+Alice,Williams,alice.williams@example.com,90000,2,2023-01-05,active
+Charlie,Brown,charlie.brown@example.com,70000,3,2023-04-12,active
+Diana,Davis,diana.davis@example.com,85000,3,2022-11-20,active
+Eve,Miller,eve.miller@example.com,72000,4,2023-05-01,active
+Frank,Garcia,frank.garcia@example.com,68000,4,2022-12-15,active
+Grace,Rodriguez,grace.rodriguez@example.com,95000,5,2023-02-28,active
+Henry,Martinez,henry.martinez@example.com,78000,5,2023-03-22,active
+
